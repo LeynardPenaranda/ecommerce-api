@@ -306,5 +306,21 @@ const items = [
   },
 ];
 module.exports = (req, res) => {
-  res.status(200).json({ items });
+  let filteredItems = items;
+
+  const { category, name } = req.query;
+
+  if (category) {
+    filteredItems = filteredItems.filter(
+      (item) => item.category.toLowerCase() === category.toLowerCase()
+    );
+  }
+
+  if (name) {
+    filteredItems = filteredItems.filter((item) =>
+      item.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  res.status(200).json({ items: filteredItems });
 };
