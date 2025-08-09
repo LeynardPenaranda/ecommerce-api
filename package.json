@@ -1,10 +1,5 @@
 {
   "name": "ecommerce-api",
   "version": "1.0.0",
-  "description": "Simple API server for ecommerce items",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vercel dev"
-  },
   "license": "MIT"
 }
